@@ -9,6 +9,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  public appMenu = [
+    {title: '1', url: '/test1', icon: 'list'},
+    {title: '2', url: '/test2', icon: 'add'},
+    {title: '3', url: '/test3', icon: 'trash'}
+  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -18,6 +23,10 @@ export class AppComponent {
   }
 
   initializeApp() {
+    // this.platform.ready().then(onfulfilled: () => {
+    //   this.statusBar.styleDefault();
+    //   this.splashScreen.hide();
+    // });
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
