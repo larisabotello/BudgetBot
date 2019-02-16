@@ -1,0 +1,7 @@
+{
+  "name": "Getbud",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
