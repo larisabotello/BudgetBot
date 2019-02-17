@@ -1,7 +1,23 @@
 <div class="incomingModal">
-    <h1>Add Incoming Info</h1>
-    <h3>Date</h3>
-    <h3>Title</h3>
-    <h3>Amount</h3>
-    <button type="button" (click)="close()">Save</button>
+    <h2>Enter Incoming Funds</h2>
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input type="text" placeholder="Where is it from?" [(ngModel)]="titleInput"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-input type="date" [(ngModel)]="dateInput"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Amount</ion-label>
+      <ion-input type="number" placeholder="How much?" [(ngModel)]="amountInput"></ion-input>
+    </ion-item>
+    <div style="width: 100%;margin-top:1rem;">
+        <div style="width: 50%;float: left;">
+            <ion-button size="large" (click)="close()">CANCEL</ion-button>
+        </div>
+        <div style="width: 50%;float: right;">
+            <ion-button size="large" (click)="saveInput()">SAVE</ion-button>
+        </div>
+    </div>
 </div>

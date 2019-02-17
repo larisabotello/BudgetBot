@@ -13,8 +13,17 @@ import { OutgoingComponent } from './outgoing/outgoing.component';
 import { BudgetComponent } from './budget/budget.component';
 import { AddIncomingComponent } from './add-incoming/add-incoming.component';
 
+// Angular Components
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { AppMaterialModules } from './materials.module';
+
+// Bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [AppComponent,
                  IncomingComponent,
@@ -25,7 +34,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [BrowserModule, IonicModule.forRoot(), 
             AppRoutingModule, 
             MatDialogModule, 
-            BrowserAnimationsModule],
+            BrowserAnimationsModule,
+            FormsModule,
+            MatFormFieldModule,
+            MatInputModule,
+            NgbModule,
+            ReactiveFormsModule,
+            AppMaterialModules],
   providers: [
     StatusBar,
     SplashScreen,

@@ -9,8 +9,16 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class AddIncomingComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<AddIncomingComponent>) { }
-
+  dateInput: Date;
+  titleInput: string;
+  amountInput: number;
   ngOnInit() {}
+  saveInput() {
+    console.log(this.titleInput);
+    console.log(this.dateInput);
+    console.log(this.amountInput);
+    this.dialogRef.close();
+  }
   close() {
     this.dialogRef.close();
   }
