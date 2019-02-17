@@ -32,6 +32,7 @@ export class IncomingComponent implements OnInit {
   }
   delete(index) {
     this.allIncomingData.splice(index, 1);
+    this.storage.set(this.inKey, this.allIncomingData);
   }
   getStorageData() {
     try{
