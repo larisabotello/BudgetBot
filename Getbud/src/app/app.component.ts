@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -10,16 +10,20 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
   public appMenu = [
-    {title: '1', url: '/test1', icon: 'list'},
-    {title: '2', url: '/test2', icon: 'add'},
-    {title: '3', url: '/test3', icon: 'trash'}
+    {title: 'Incoming', url: 'incoming', icon: 'list'},
+    {title: 'Outgoing', url: 'outgoing', icon: 'add'},
+    {title: 'Budget', url: 'budget', icon: 'trash'}
   ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private navCtrl: NavController,
   ) {
     this.initializeApp();
+  }
+  navigateTo(page){
+    this.navCtrl.navigateRoot(['/',page.url]);
   }
 
   initializeApp() {

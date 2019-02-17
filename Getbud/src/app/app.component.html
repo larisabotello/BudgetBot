@@ -7,13 +7,23 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-list>
+        <!-- <div *ngFor="let p of appMenu">
+          <ion-item>
+
+          </ion-item>
+        </div> -->
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appMenu">
+            <ion-item (click)="navigateTo(p)">
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        <!-- <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appMenu">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-        </ion-list>
+        </ion-list> -->
       </ion-content>
     </ion-menu>
   <ion-router-outlet main></ion-router-outlet>
