@@ -10,5 +10,7 @@ export class IncomingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
+  addIncoming() {
+    console.log('add incoming data');
+  }
 }
