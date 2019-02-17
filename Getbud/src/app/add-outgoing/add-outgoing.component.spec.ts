@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddIncomingComponent } from './/add-incoming.component';
+import { AddOutgoingComponent } from './add-outgoing.component';
 
-describe('AddIncomingPage', () => {
-  let component: AddIncomingComponent;
-  let fixture: ComponentFixture<AddIncomingComponent>;
+describe('AddOutgoingPage', () => {
+  let component: AddOutgoingComponent;
+  let fixture: ComponentFixture<AddOutgoingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddIncomingComponent ],
+      declarations: [ AddOutgoingComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddIncomingComponent);
+    fixture = TestBed.createComponent(AddOutgoingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

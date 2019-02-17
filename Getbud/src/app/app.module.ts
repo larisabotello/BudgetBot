@@ -12,6 +12,7 @@ import { IncomingComponent } from './incoming/incoming.component';
 import { OutgoingComponent } from './outgoing/outgoing.component';
 import { BudgetComponent } from './budget/budget.component';
 import { AddIncomingComponent } from './add-incoming/add-incoming.component';
+import { AddOutgoingComponent } from './add-outgoing/add-outgoing.component';
 
 // Angular Components
 import { MatDialogModule } from "@angular/material/dialog";
@@ -29,8 +30,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
                  IncomingComponent,
                  OutgoingComponent,
                  BudgetComponent,
-                 AddIncomingComponent],
-  entryComponents: [AddIncomingComponent],
+                 AddIncomingComponent,
+                 AddOutgoingComponent],
+  entryComponents: [AddIncomingComponent,AddOutgoingComponent],
   imports: [BrowserModule, IonicModule.forRoot(), 
             AppRoutingModule, 
             MatDialogModule, 
