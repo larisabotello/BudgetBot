@@ -10,15 +10,22 @@ import { AddOutgoingComponent } from '../add-outgoing/add-outgoing.component';
 export class OutgoingComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
-
+  allOutgoingData: {title: string, date: Date, amount: number}[] = [];
   ngOnInit() {}
 
   addOutgoing() {
-    this.dialog.open(AddOutgoingComponent, {
+    const outgoingDialog = this.dialog.open(AddOutgoingComponent, {
       disableClose: true,
       hasBackdrop: true,
     });
-    console.log('Outgoing data');
+    outgoingDialog.afterClosed().subscribe(data =>{
+      if(data !== null){
+        this.allOutgoingData.push(data)
+      }
+    });
+  }
+  delete(index) {
+    this.allOutgoingData.splice(index, 1);
   }
 
 }
