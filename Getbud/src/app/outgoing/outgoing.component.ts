@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddOutgoingComponent } from '../add-outgoing/add-outgoing.component';
 
 @Component({
   selector: 'app-outgoing',
@@ -7,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutgoingComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {}
 
   addOutgoing() {
+    this.dialog.open(AddOutgoingComponent, {
+      disableClose: true,
+      hasBackdrop: true,
+    });
     console.log('Outgoing data');
   }
 
