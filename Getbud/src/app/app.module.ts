@@ -11,14 +11,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { IncomingComponent } from './incoming/incoming.component';
 import { OutgoingComponent } from './outgoing/outgoing.component';
 import { BudgetComponent } from './budget/budget.component';
+import { AddIncomingComponent } from './add-incoming/add-incoming.component';
 
+import { MatDialogModule } from "@angular/material/dialog";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent,
                  IncomingComponent,
                  OutgoingComponent,
-                 BudgetComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+                 BudgetComponent,
+                 AddIncomingComponent],
+  entryComponents: [AddIncomingComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), 
+            AppRoutingModule, 
+            MatDialogModule, 
+            BrowserAnimationsModule],
   providers: [
     StatusBar,
     SplashScreen,
