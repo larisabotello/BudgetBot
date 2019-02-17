@@ -9,13 +9,20 @@ import { AddIncomingComponent } from '../add-incoming/add-incoming.component';
 export class IncomingComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
-
+  allIncomingData: {title: string, date: Date, amount: number}[] = [];
   ngOnInit() {}
   addIncoming() {
-    this.dialog.open(AddIncomingComponent, {
+    const incomingDialog = this.dialog.open(AddIncomingComponent, {
       disableClose: true,
       hasBackdrop: true,
     });
-    console.log('add incoming data');
+    incomingDialog.afterClosed().subscribe(data => {
+      if(data !== null){
+        this.allIncomingData.push(data)
+      }
+    });
+  }
+  delete(index) {
+    this.allIncomingData.splice(index, 1);
   }
 }

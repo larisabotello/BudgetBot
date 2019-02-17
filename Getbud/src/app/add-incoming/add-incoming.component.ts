@@ -10,17 +10,17 @@ export class AddIncomingComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<AddIncomingComponent>) { }
   dateInput: Date;
-  titleInput: string;
-  amountInput: number;
+  titleInput: string = null;
+  amountInput: number = null;
   ngOnInit() {}
   saveInput() {
-    console.log(this.titleInput);
-    console.log(this.dateInput);
-    console.log(this.amountInput);
-    this.dialogRef.close();
+    if(this.titleInput !== '' && this.dateInput !== null && this.amountInput!== null) {
+      this.dialogRef.close({title: this.titleInput, date: this.dateInput, amount: this.amountInput});
+    } else {
+    }
   }
   close() {
-    this.dialogRef.close();
+    this.dialogRef.close(null);
   }
 
 }
