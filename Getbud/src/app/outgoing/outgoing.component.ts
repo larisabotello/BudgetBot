@@ -11,4 +11,8 @@ export class OutgoingComponent implements OnInit {
 
   ngOnInit() {}
 
+  addOutgoing() {
+    console.log('Outgoing data');
+  }
+
 }
