@@ -32,6 +32,7 @@ export class OutgoingComponent implements OnInit {
   }
   delete(index) {
     this.allOutgoingData.splice(index, 1);
+    this.storage.set(this.outKey, this.allOutgoingData);
   }
   getStorageData() {
     try{
