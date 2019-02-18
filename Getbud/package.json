@@ -30,6 +30,7 @@
     "@ionic/angular": "^4.0.0",
     "@ionic/storage": "^2.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.0.3",
+    "chart.js": "^2.7.3",
     "cordova-sqlite-storage": "3.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",

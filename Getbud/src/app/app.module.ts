@@ -25,6 +25,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 // Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BudgetViewComponent } from './budget-view/budget-view.component';
 
 @NgModule({
   declarations: [AppComponent,
@@ -32,8 +33,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
                  OutgoingComponent,
                  BudgetComponent,
                  AddIncomingComponent,
-                 AddOutgoingComponent],
-  entryComponents: [AddIncomingComponent,AddOutgoingComponent],
+                 AddOutgoingComponent,
+                 BudgetViewComponent],
+  entryComponents: [AddIncomingComponent,
+                    AddOutgoingComponent, 
+                    BudgetViewComponent],
   imports: [BrowserModule, IonicModule.forRoot(), 
             IonicStorageModule.forRoot(),
             AppRoutingModule, 

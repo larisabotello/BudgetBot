@@ -1,3 +1,42 @@
-<p>
-  budget-view works!
-</p>
+<div class="budgetViewModal">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start" (click)="close()">
+        <ion-icon size="large" name="arrow-back"></ion-icon>
+      </ion-buttons>
+      <ion-title>
+        {{ monthNM }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-card>
+      <ion-card-header>
+        <ion-label style="font-weight: bold;font-size: 2rem;">Budget: {{ budgetTotal }}</ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- <ion-label style="color: green">Incoming: {{ incomingTotal }}</ion-label>
+        <ion-label style="color: red">Outgoing: {{ outgoingTotal }}</ion-label> -->
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-list>
+      <ion-item *ngFor="let item of incomingArray;"> 
+        <ion-label style="font-family: 'Times New Roman', Times, serif;color:green;">
+          <div style="font-size:.7rem;">{{ item.date | date: 'MMM/dd/yyyy'}}</div>
+          <div style="float:left;font-size: 1.5rem;"> {{ item.title }} </div>
+          <div style="float:right;font-size: 1.5rem;"> $ {{ item.amount }} </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item *ngFor="let item of outgoingArray;"> 
+        <ion-label style="font-family: 'Times New Roman', Times, serif;color: red;">
+          <div style="font-size:.7rem;">{{ item.date | date: 'MMM/dd/yyyy'}}</div>
+          <div style="float:left;font-size: 1.5rem;"> {{ item.title }} </div>
+          <div style="float:right;font-size: 1.5rem;"> $ {{ item.amount }} </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</div>
