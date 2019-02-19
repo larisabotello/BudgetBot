@@ -10,11 +10,17 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let m of months;let i = index" (click)="monthSelect(i)">
-      <ion-label style="font-family: 'Times New Roman', Times, serif">
-        <div style="font-size:1.5rem;">{{ m }}</div>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+<ion-item>
+    <ion-label>Year</ion-label>
+    <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="false" value="2019">
+      <ion-select-option value="2019">2019</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-grid>
+    <ion-row wrap>
+      <ion-col *ngFor="let m of months;let i = index" width-50>
+        <ion-button class="monthButton" color="light" (click)="monthSelect(i)">{{ m }}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

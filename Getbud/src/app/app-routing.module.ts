@@ -5,7 +5,7 @@ import { OutgoingComponent } from './outgoing/outgoing.component';
 import { BudgetComponent } from './budget/budget.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'incoming', pathMatch: 'full' },
+  { path: '', redirectTo: 'budget', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'incoming', component: IncomingComponent},
   { path: 'outgoing', component: OutgoingComponent},

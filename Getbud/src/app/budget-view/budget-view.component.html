@@ -9,14 +9,12 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content padding class="bottomPadding">
     <ion-card>
       <ion-card-header>
-        <ion-label style="font-weight: bold;font-size: 2rem;">Budget: {{ budgetTotal }}</ion-label>
+        <ion-label style="font-weight: bold;font-size: 1.5rem;">Budget: ${{ budgetTotal }}</ion-label>
       </ion-card-header>
       <ion-card-content>
-        <!-- <ion-label style="color: green">Incoming: {{ incomingTotal }}</ion-label>
-        <ion-label style="color: red">Outgoing: {{ outgoingTotal }}</ion-label> -->
         <canvas #doughnutCanvas></canvas>
       </ion-card-content>
     </ion-card>
@@ -28,6 +26,9 @@
           <div style="float:right;font-size: 1.5rem;"> $ {{ item.amount }} </div>
         </ion-label>
       </ion-item>
+      <ion-item style="font-weight: bold;font-size: 1.5rem;float: right;">
+        <ion-label *ngIf="incomingArray.length > 0" >Total: ${{ incomingTotal}}</ion-label>
+      </ion-item>
     </ion-list>
     <ion-list>
       <ion-item *ngFor="let item of outgoingArray;"> 
@@ -36,6 +37,9 @@
           <div style="float:left;font-size: 1.5rem;"> {{ item.title }} </div>
           <div style="float:right;font-size: 1.5rem;"> $ {{ item.amount }} </div>
         </ion-label>
+      </ion-item>
+      <ion-item style="font-weight: bold;font-size: 1.5rem;float: right;">
+        <ion-label *ngIf="outgoingArray.length > 0">Total: ${{ outgoingTotal }}</ion-label>
       </ion-item>
     </ion-list>
   </ion-content>

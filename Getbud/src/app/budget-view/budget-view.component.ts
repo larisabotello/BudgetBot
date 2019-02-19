@@ -38,7 +38,6 @@ export class BudgetViewComponent implements OnInit {
   }
   createPieChart(inc, out) {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
-
       type: 'doughnut',
       data: {
           labels: ["Incoming", "Outgoing"],
@@ -46,8 +45,8 @@ export class BudgetViewComponent implements OnInit {
               label: 'money',
               data: [inc, out],
               backgroundColor: [
-                  'rgba(0, 255, 0, 0.8)',
-                  'rgba(255, 0, 0, 0.8)'
+                  'rgba(0, 255, 0, 0.7)',
+                  'rgba(255, 0, 0, 0.7)'
               ],
               hoverBackgroundColor: [
                 'rgba(0, 255, 0)',
@@ -55,7 +54,6 @@ export class BudgetViewComponent implements OnInit {
               ]
           }]
       }
-  
   });
   }
 }
