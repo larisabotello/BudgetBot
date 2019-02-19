@@ -12,7 +12,9 @@ export class OutgoingComponent implements OnInit {
   outKey = 'outgoingData';
   constructor(public dialog: MatDialog, private storage: Storage) { }
   allOutgoingData: {title: string, date: Date, amount: number}[] = [];
-  ngOnInit() {}
+  ngOnInit() {
+    this.getStorageData();
+  }
 
   addOutgoing() {
     const outgoingDialog = this.dialog.open(AddOutgoingComponent, {

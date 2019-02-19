@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { Chart } from 'chart.js';
+import { AddIncomingComponent } from '../add-incoming/add-incoming.component';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-budget-view',
   templateUrl: './budget-view.component.html',
@@ -9,7 +11,8 @@ import { Chart } from 'chart.js';
 export class BudgetViewComponent implements OnInit {
   @ViewChild('doughnutCanvas') doughnutCanvas;
   doughnutChart: any;
-  constructor(private dialogRef: MatDialogRef<BudgetViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private dialogRef: MatDialogRef<BudgetViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+  public navCtrl: NavController) { }
   incomingTotal: number;
   outgoingTotal: number;
   budgetTotal = 0;
@@ -35,6 +38,14 @@ export class BudgetViewComponent implements OnInit {
   budgetCalculation(inc, out) {
     let val = inc - out;
     return val;
+  }
+  addIncoming() {
+    this.close();
+    this.navCtrl.navigateRoot(['/', 'incoming']);
+  }
+  addOutgoing() {
+    this.close();
+    this.navCtrl.navigateRoot(['/', 'outgoing']);  
   }
   createPieChart(inc, out) {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {

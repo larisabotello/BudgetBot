@@ -10,9 +10,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
   public appMenu = [
-    {title: 'Incoming', url: 'incoming', icon: 'list'},
-    {title: 'Outgoing', url: 'outgoing', icon: 'add'},
-    {title: 'Budget', url: 'budget', icon: 'trash'}
+    {title: 'Incoming', url: 'incoming'},
+    {title: 'Outgoing', url: 'outgoing'},
+    {title: 'Budget', url: 'budget'}
   ];
   constructor(
     private platform: Platform,
@@ -23,14 +23,10 @@ export class AppComponent {
     this.initializeApp();
   }
   navigateTo(page){
-    this.navCtrl.navigateRoot(['/',page.url]);
+    this.navCtrl.navigateRoot(['/', page.url]);
   }
 
   initializeApp() {
-    // this.platform.ready().then(onfulfilled: () => {
-    //   this.statusBar.styleDefault();
-    //   this.splashScreen.hide();
-    // });
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
